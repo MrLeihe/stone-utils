@@ -1,11 +1,10 @@
 {
   "name": "@stonejs/utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Common tools library",
   "main": "/dist/bundle.js",
   "scripts": {
-    "build": "rollup -c",
-    "publish": "gulp"
+    "build": "rollup -c"
   },
   "keywords": [
     "utils",
