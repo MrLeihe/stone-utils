@@ -1,5 +1,5 @@
-.PUBLISH: publish
-publish:
+.PHONY: deploy
+deploy:
+	gulp deploy
 	npm run build
-	gulp bump
 	npm publish --access public

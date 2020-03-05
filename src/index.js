@@ -1,8 +1,8 @@
 
-function debounce(fn, wait) {
+function debounce({ fn, wait = 300, immediate = false, runSync = false }) {
     let timer = null
-    let context = this
-    return function () {
+    const context = this
+    const wrapper = function () {
         let args = arguments
 
         if (timer) {
@@ -14,6 +14,14 @@ function debounce(fn, wait) {
             fn.apply(context, args)
         }, wait)
     }
+
+    if (immediate) {
+        wrapper()
+    } else if (runSync) {
+        fn.call(context)
+    }
+
+    return wrapper
 }
 
 module.exports = {
